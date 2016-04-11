@@ -1,14 +1,17 @@
 fusion-point-polygon
 ========================
 
-Live demo at http://jackdougherty.github.io/fusion-point-polygon
+## Demo
+http://jackdougherty.github.io/fusion-point-polygon
 
+Use this template if you wish to create a Search-and-Filter map that turns on/off at least 2 layers (points and polygons), and draws data from Google Fusion Tables. Point map can be filtered with textual or numeric values.
 
-## TO DO
+## Credit
+Searchable Map Template with point and polygon layers, with dynamic legend, using Google Fusion Tables. Based on Derek Eder's Searchable Map Template v1.3 http://derekeder.com/searchable_map_template/
 
-Update all text below and add to book
-
-Use this template if you wish to create a Search-and-Filter map that turns on/off at least 2 layers (points and polygons), and draws data from Google Fusion Tables. The default point map displays a textual legend (A, B, C), with option to switch to numeric (0-100) values. Based on template customized by Derek Eder http://derekeder.com/searchable_map_template/
+## Create your own
+Learn more in an open-access Data Visualization book-in-progress by Jack Dougherty at Trinity College CT
+http://datavizforall.org
 
 Basic steps:
 
@@ -23,5 +26,6 @@ Basic steps:
 
 3) Host everything on the web (such as a GitHub repository gh-pages branch)
 
-Learn more in an open-access Data Visualization book-in-progress by Jack Dougherty at Trinity College CT
-http://datavizforall.org
+## TO DO
+- add iframe version
+- update to Derek Eder's template v1.4
