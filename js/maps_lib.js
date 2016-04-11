@@ -26,10 +26,10 @@ var MapsLib = {
 
   //MODIFY the encrypted Table IDs of your Fusion Tables (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1ga2XDlXm5uoH5Dx_jKWrMn-BgBGYsSnSRqDWBYou", //Point data layer
-  
-  polygon1TableID:    "1ceippR4giBiF-pT9PE1YAUvebFp6_NKvYriccYo", //Outline map layer of CT town boundaries
-  polygon2TableID:    "1VopQGBhRKyyk25EIA5ptScvULxR68d43RhZ1ycM", //Thematic map layer of selected CT school districts
+  fusionTableId:      "1FMjVRb16OqlkeodL7onaQ5A7jamtpSY0TmHaa-WQ", //Point data layer
+
+  polygon1TableID:    "1isMlqPTETZovbtJXMwI9oTu0qVPSVK_1U6tg2eA_", // Hartford neighborhood outlines
+  polygon2TableID:    "1ceippR4giBiF-pT9PE1YAUvebFp6_NKvYriccYo", //CT town outlines
 
   //*MODIFY Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -39,7 +39,7 @@ var MapsLib = {
   //NOTE: if your location column name has spaces in it, surround it with single quotes
   //example: locationColumn:     "'my location'",
   //if your Fusion Table has two-column lat/lng data, see https://support.google.com/fusiontables/answer/175922
-  locationColumn:     "Lat",
+  locationColumn:     "Address",
 
   map_centroid:       new google.maps.LatLng(41.7682,-72.684), //center that your map defaults to
   locationScope:      "connecticut",      //geographical area appended to all address searches
@@ -107,11 +107,11 @@ var MapsLib = {
     else $("#search_radius").val(MapsLib.searchRadius);
     $(":checkbox").prop("checked", "checked");
     $("#result_box").hide();
-    
+
     //-----custom initializers -- default setting to display Polygon1 layer
-    
-    $("#rbPolygon1").attr("checked", "checked"); 
-    
+
+    $("#rbPolygon1").attr("checked", "checked");
+
     //-----end of custom initializers-------
 
     //run the default search
@@ -136,23 +136,18 @@ var MapsLib = {
 
   //-----custom filters for point data layer
     //---MODIFY column header and values below to match your Google Fusion Table AND index.html
-    //-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
-    var type_column = "'Program Type'";  // -- note use of single & double quotes for two-word column header
-    var tempWhereClause = [];
-    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Interdistrict");
-    if ( $("#cbType2").is(':checked')) tempWhereClause.push("District");
-    if ( $("#cbType3").is(':checked')) tempWhereClause.push("MorePreK");
-    whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
-
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
-    /*    var type_column = "'TypeNum'";
+
+    var type_column = "'TypeNum'";
     var searchType = type_column + " IN (-1,";
     if ( $("#cbType1").is(':checked')) searchType += "1,";
     if ( $("#cbType2").is(':checked')) searchType += "2,";
     if ( $("#cbType3").is(':checked')) searchType += "3,";
     if ( $("#cbType4").is(':checked')) searchType += "4,";
     if ( $("#cbType5").is(':checked')) searchType += "5,";
-    whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";*/
+    whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
+
+
     //-------end of custom filters--------
 
     if (address != "") {
@@ -332,10 +327,10 @@ var MapsLib = {
     if (text == undefined) return '';
   	return decodeURIComponent(text);
   }
-  
+
   //-----custom functions-------
   // NOTE: if you add custom functions, make sure to append each one with a comma, except for the last one.
   // This also applies to the convertToPlainString function above
-  
+
   //-----end of custom functions-------
 }
