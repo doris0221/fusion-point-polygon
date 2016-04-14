@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
           </button>
           <!--EDIT title of web page, and link destination if desired-->
-          <a class='navbar-brand' href='index.html'>KNOX Community Gardens Map</a>
+            <a class='navbar-brand' href='index.html'>KNOX Community Gardens Map</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -76,9 +76,8 @@
                   <input type='checkbox' id='cbType2' />
                   <span class='filter-box filter-green'></span>
                   Plots Available
-                 </label>
+                </label>
               </li>
-            </ul>
             <!--MODIFY Polygon layers legend heading, labels (such as Polygon layer 1) to match your data, and related variables in maps_lib.js file -->
             <ul class='inputs-list unstyled'>
               <li>
@@ -140,41 +139,32 @@
         $(window).resize(function () {
           var h = $(window).height(),
             offsetTop = 105; // Calculate the top offset
-
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
-
         $(function() {
           MapsLib.initialize();
           $("#search_address").geocomplete();
-
           $(':checkbox').click(function(){
             MapsLib.doSearch();
           });
-
           $(':radio').click(function(){
             MapsLib.doSearch();
           });
-
           $('#search_radius').change(function(){
             MapsLib.doSearch();
           });
-
           $('#search').click(function(){
             MapsLib.doSearch();
           });
-
           $('#find_me').click(function(){
             MapsLib.findMe();
             return false;
           });
-
           $('#reset').click(function(){
             $.address.parameter('address','');
             MapsLib.initialize();
             return false;
           });
-
           $(":text").keydown(function(e){
               var key =  e.keyCode ? e.keyCode : e.which;
               if(key == 13) {
