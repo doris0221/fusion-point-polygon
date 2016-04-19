@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <!--MODIFY title that appears in web browser tab -->
-    <title>fusion-point-polygon</title>
+    <title>KNOX Community Gardens Map</title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content='' name='description' />
@@ -25,12 +25,12 @@
             <span class="icon-bar"></span>
           </button>
           <!--EDIT title of web page, and link destination if desired-->
-          <a class='navbar-brand' href='index.html'>Searchable Map Template v1.3 fusion-point-polygon</a>
+            <a class='navbar-brand' href='index.html'>KNOX Community Gardens Map</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <!--MODIFY link and text to point to your own site if desired-->
-            <li class='active'><a href="http://datavizforall.org">Learn more at DataVizForAll.org</a></li>
+            <li class='active'><a href="https://www.knoxhartford.org/programs/community-gardens/">Learn more about KNOX Community Gardens Program</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -61,45 +61,23 @@
             </p>
             <!-- Edit to change title and filter tools for point layer. Also add filter to maps_lib.js -->
             <h4>
-              Connecticut Public Schools
+              What are you looking for?
             </h4>
             <ul class='inputs-list unstyled'>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType1' />
                   <span class='filter-box filter-blue'></span>
-                  District schools
+                  Greenhouse Available
                 </label>
               </li>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType2' />
                   <span class='filter-box filter-green'></span>
-                  Interdistrict Magnets
+                  Plots Available
                 </label>
               </li>
-              <li>
-                <label class='checkbox inline'>
-                  <input type='checkbox' id='cbType3' />
-                  <span class='filter-box filter-red'></span>
-                  Charter schools
-                </label>
-              </li>
-              <li>
-                <label class='checkbox inline'>
-                  <input type='checkbox' id='cbType4' />
-                  <span class='filter-box filter-purple'></span>
-                  Technical Schools
-                </label>
-              </li>
-              <li>
-                <label class='checkbox inline'>
-                  <input type='checkbox' id='cbType5' />
-                  <span class='filter-box filter-yellow'></span>
-                  Other Public Schools
-                </label>
-              </li>
-            </ul>
             <!--MODIFY Polygon layers legend heading, labels (such as Polygon layer 1) to match your data, and related variables in maps_lib.js file -->
             <ul class='inputs-list unstyled'>
               <li>
@@ -161,41 +139,32 @@
         $(window).resize(function () {
           var h = $(window).height(),
             offsetTop = 105; // Calculate the top offset
-
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
-
         $(function() {
           MapsLib.initialize();
           $("#search_address").geocomplete();
-
           $(':checkbox').click(function(){
             MapsLib.doSearch();
           });
-
           $(':radio').click(function(){
             MapsLib.doSearch();
           });
-
           $('#search_radius').change(function(){
             MapsLib.doSearch();
           });
-
           $('#search').click(function(){
             MapsLib.doSearch();
           });
-
           $('#find_me').click(function(){
             MapsLib.findMe();
             return false;
           });
-
           $('#reset').click(function(){
             $.address.parameter('address','');
             MapsLib.initialize();
             return false;
           });
-
           $(":text").keydown(function(e){
               var key =  e.keyCode ? e.keyCode : e.which;
               if(key == 13) {

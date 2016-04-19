@@ -26,20 +26,19 @@ var MapsLib = {
 
   //MODIFY the encrypted Table IDs of your Fusion Tables (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1FMjVRb16OqlkeodL7onaQ5A7jamtpSY0TmHaa-WQ", //Point data layer
+  fusionTableId:      "1QDfxLcf7cSYMU98yG6Cyuhqtj8sOziTwVNHUIjme", //Point data layer
 
-  polygon1TableID:    "1isMlqPTETZovbtJXMwI9oTu0qVPSVK_1U6tg2eA_", // Hartford neighborhood outlines
-  polygon2TableID:    "1ceippR4giBiF-pT9PE1YAUvebFp6_NKvYriccYo", //CT town outlines
+  polygon1TableID:    "1B_h8fr9hD2N4U0zGWqwToWO1mcPgFvtvVLlakkRE", // Hartford neighborhood outlines
 
   //*MODIFY Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
-  googleApiKey:       "AIzaSyDIevSvpV-ONb4Pf15VUtwyr_zZa7ccwq4",
+  googleApiKey:       "AIzaSyBcMjg-RgtodMZ-86MrDCK8cIQIMsCsykE",
 
   //MODIFY name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
   //example: locationColumn:     "'my location'",
   //if your Fusion Table has two-column lat/lng data, see https://support.google.com/fusiontables/answer/175922
-  locationColumn:     "Address",
+  locationColumn:     "Location",
 
   map_centroid:       new google.maps.LatLng(41.7682,-72.684), //center that your map defaults to
   locationScope:      "connecticut",      //geographical area appended to all address searches
